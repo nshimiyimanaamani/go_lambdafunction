@@ -12,7 +12,7 @@ build: ## Build golang binaries
 	@for function in $(functions) ; do \
 		echo "Build $$function" ; \
 		cd ${current_dir}/../functions/$$function ; \
-		env GOARCH=arm64 GOOS=linux go build -o ${current_dir}/bin/$$function/bootstrap *.go ; \
+		env GOARCH=amd64 GOOS=linux go build -o ${current_dir}/bin/$$function/bootstrap *.go ; \
 		cd ${current_dir}/bin/$$function; \
 		zip ../$$function.zip bootstrap; \
 	done
